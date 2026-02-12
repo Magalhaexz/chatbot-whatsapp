@@ -10,6 +10,7 @@ const client = new Client({
   authStrategy: new LocalAuth(),
   puppeteer: {
     headless: true,
+    executablePath: (process.env.PUPPETEER_EXECUTABLE_PATH || '').trim(),
     args: [
       '--no-sandbox',
       '--disable-setuid-sandbox',
@@ -21,7 +22,6 @@ const client = new Client({
     ]
   }
 });
-
 // Gerar QR Code
 client.on('qr', (qr) => {
   console.log('\n📱 Escaneie o QR Code abaixo com seu WhatsApp:\n');

@@ -169,7 +169,7 @@ app.get('/', (req, res) => {
 });
 
 // Iniciar servidor
-app.listen(PORT, () => {
+app.listen(PORT, '0.0.0.0', () => {
   console.log(`\n🌐 Painel Web disponível em: http://localhost:${PORT}`);
   console.log(`📊 API disponível em: http://localhost:${PORT}/api/leads`);
   console.log(`📥 Download Excel: http://localhost:${PORT}/api/export/excel\n`);
